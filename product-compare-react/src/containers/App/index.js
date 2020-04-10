@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { HashRouter, Router, IndexRoute } from 'react-router-dom'
+import Navbar from '../../components/Layout/Navbar'
 
 import { Home, NotFound } from '../'
 import HomePage from '../../components/HomePage'
 import NeimanProduct from '../../components/NeimanProduct'
+import '../../components/Layout/Navbar.css'
+
 
 class App extends Component {
   render() {

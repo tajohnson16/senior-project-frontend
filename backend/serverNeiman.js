@@ -5,12 +5,12 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const Data = require('./data');
 
-const API_PORT = 3002;
-const app2 = express();
+const API_PORT = 3002; /* SECOND API PORT */
+const app2 = express(); /* SECOND APP */
 app2.use(cors());
 const router = express.Router();
 
-// this is our MongoDB database
+// this is our MongoDB database FOR NEIMAN
 const dbRoute =
     'mongodb://localhost:27017/neiman-mens-prod';
 

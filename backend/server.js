@@ -10,7 +10,7 @@ const app = express();
 app.use(cors());
 const router = express.Router();
 
-// this is our MongoDB database
+// this is our MongoDB database FOR SAKS
 const dbRoute =
     'mongodb://localhost:27017/saks-mens-prod';
 
