@@ -4,6 +4,7 @@ import { HashRouter, Router, IndexRoute } from 'react-router-dom'
 
 import { Home, NotFound } from '../'
 import HomePage from '../../components/HomePage'
+import NeimanProduct from '../../components/NeimanProduct'
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
           <Switch history={HashRouter}>
             <Route exact path="/" component={HomePage}></Route>
             <Route path="/products" component={Home}> </Route>
+            <Route path="/productsNeiman" component={NeimanProduct}> </Route>
             <Route component={NotFound} />
           </Switch>
         </div>
