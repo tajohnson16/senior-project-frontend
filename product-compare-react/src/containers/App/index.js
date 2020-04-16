@@ -6,6 +6,8 @@ import Navbar from '../../components/Layout/Navbar'
 import { Home, NotFound } from '../'
 import HomePage from '../../components/HomePage'
 import NeimanProduct from '../../components/NeimanProduct'
+import SaksBelts from '../../components/SaksBelts'
+import SaksWatches from '../../components/SaksWatches'
 import '../../components/Layout/Navbar.css'
 
 
@@ -18,6 +20,8 @@ class App extends Component {
             <Route exact path="/" component={HomePage}></Route>
             <Route path="/products" component={Home}> </Route>
             <Route path="/productsNeiman" component={NeimanProduct}> </Route>
+            <Route path="/saksBelts" component={SaksBelts}> </Route>
+            <Route path="/saksWatches" component={SaksWatches}> </Route>
             <Route component={NotFound} />
           </Switch>
         </div>

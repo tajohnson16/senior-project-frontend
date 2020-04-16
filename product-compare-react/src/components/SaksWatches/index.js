@@ -13,12 +13,36 @@ const grids2 = {
     grid: 'auto / auto auto',
 };
 
-var sumNeiman = 0;
-var lenNeiman = 0;
-var avgNeiman = 0;
+var sumSaks = 0;
+var lenSaks = 0;
+var avgSaks = 0;
 
 function divide($a, $b) {
     return ($a / $b);
+}
+
+/* function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+} */
+/* <div className="dropdown">
+                    <button onclick={myFunction()} className="dropbtn">Dropdown</button>
+                    <div id="myDropdown" className="dropdown-content">
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div> */
+window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
 }
 
 class index extends Component {
@@ -49,20 +73,27 @@ class index extends Component {
     }
 
     getDataFromDb = () => {
-        fetch('http://localhost:3002/api/getData')
+        fetch('http://localhost:3004/api/getData')
             .then((data) => data.json())
             .then((res) => this.setState({ data: res.data }));
     };
 
     render() {
         const { data } = this.state;
-        data.map((dat) => sumNeiman += dat.price)
-        lenNeiman = data.length;
-        avgNeiman = divide(sumNeiman, lenNeiman).toFixed(2);
+        data.map((dat) => sumSaks += dat.price)
+        lenSaks = data.length;
+        avgSaks = divide(sumSaks, lenSaks).toFixed(2);
         return (
+
             <div key={data.message} className="col-md" >
-                <h2><i>Neiman Marcus</i>: Product List</h2>
-                <h3>${avgNeiman}</h3>
+                <h2><i>Saks Fifth Avenue</i>: Watches</h2>
+                <h3>Average Price: ${avgSaks}</h3>
+                <div>
+                    <a className="button" href='/products'>Shoes</a>
+                    <a className="button" href='/saksBelts'>Belts</a>
+                    <a className="button" href='/saksWatches'>Watches</a>
+                </div>
+                <br />
                 <div style={grids}>
                     {data.length <= 0
                         ? 'No entries'

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './styles.css';
+import { dropDown } from '../Layout/dropDown'
 import axios from 'axios';
 
 const grids = {
@@ -12,6 +13,14 @@ const grids2 = {
     display: 'grid',
     grid: 'auto / auto auto',
 };
+
+var sumSaks = 0;
+var lenSaks = 0;
+var avgSaks = 0;
+
+function divide($a, $b) {
+    return ($a / $b);
+}
 
 class index extends Component {
     state = {
@@ -27,8 +36,8 @@ class index extends Component {
     componentDidMount() {
         this.getDataFromDb();
         if (!this.state.intervalIsSet) {
-            let interval = setInterval(this.getDataFromDb, 1000);
-            this.setState({ intervalIsSet: interval });
+            /*let interval = setInterval(this.getDataFromDb, 1000);*/
+            this.setState({ intervalIsSet: null }); //change back to 'interval" if needed
         }
     }
 
@@ -48,9 +57,20 @@ class index extends Component {
 
     render() {
         const { data } = this.state;
+        data.map((dat) => sumSaks += dat.price)
+        lenSaks = data.length;
+        avgSaks = divide(sumSaks, lenSaks).toFixed(2);
         return (
+
             <div key={data.message} className="col-md" >
-                <h2><i>Saks Fifth Avenue</i>: Product List</h2>
+                <h2><i>Saks Fifth Avenue</i>: Shoes</h2>
+                <h3>Average Price: ${avgSaks}</h3>
+                <div>
+                    <a className="button" href='/products'>Shoes</a>
+                    <a className="button" href='/saksBelts'>Belts</a>
+                    <a className="button" href='/saksWatches'>Watches</a>
+                </div>
+                <br />
                 <div style={grids}>
                     {data.length <= 0
                         ? 'No entries'
@@ -66,7 +86,7 @@ class index extends Component {
                                         <span className="product_name">{dat.name}</span>
                                         <div style={grids2}>
                                             <span className="product_price">{dat.designer}</span>
-                                            <span id="price">${dat.price}</span>
+                                            <span id="price">${dat.price.toFixed(2)}</span>
                                         </div>
 
                                     </div>

@@ -3,7 +3,7 @@ const express = require('express');
 var cors = require('cors');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
-const Data = require('./data');
+const Data = require('./dataNeiman');
 
 const API_PORT = 3002; /* SECOND API PORT */
 const app2 = express(); /* SECOND APP */

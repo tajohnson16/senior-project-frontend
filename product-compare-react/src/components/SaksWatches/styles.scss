@@ -109,10 +109,10 @@ $product-main-color: $green;
   margin: 5px;
   font-size: 16px;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  color: white;
-  text-decoration: none; }
+  cursor: pointer; }
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
 
 .dropdown {
   position: relative;
