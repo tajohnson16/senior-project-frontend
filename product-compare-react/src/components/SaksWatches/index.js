@@ -21,30 +21,6 @@ function divide($a, $b) {
     return ($a / $b);
 }
 
-/* function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-} */
-/* <div className="dropdown">
-                    <button onclick={myFunction()} className="dropbtn">Dropdown</button>
-                    <div id="myDropdown" className="dropdown-content">
-                        <a href="#home">Home</a>
-                        <a href="#about">About</a>
-                        <a href="#contact">Contact</a>
-                    </div>
-                </div> */
-window.onclick = function (event) {
-    if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-            }
-        }
-    }
-}
-
 class index extends Component {
     state = {
         data: [],
@@ -73,7 +49,7 @@ class index extends Component {
     }
 
     getDataFromDb = () => {
-        fetch('http://localhost:3004/api/getData')
+        fetch('http://localhost:3003/api/getData')
             .then((data) => data.json())
             .then((res) => this.setState({ data: res.data }));
     };

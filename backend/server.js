@@ -9,8 +9,8 @@ const Data2 = require('./data2');
 const Data3 = require('./data3');
 
 const API_PORT = 3001;
-const API_PORT2 = 3003;
-const API_PORT3 = 3004;
+const API_PORT2 = 3002;
+const API_PORT3 = 3003;
 
 const app = express();
 const app2 = express();

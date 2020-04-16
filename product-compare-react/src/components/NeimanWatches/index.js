@@ -49,7 +49,7 @@ class index extends Component {
     }
 
     getDataFromDb = () => {
-        fetch('http://localhost:3004/api/getData')
+        fetch('http://localhost:3006/api/getData')
             .then((data) => data.json())
             .then((res) => this.setState({ data: res.data }));
     };
@@ -62,7 +62,7 @@ class index extends Component {
         return (
 
             <div key={data.message} className="col-md" >
-                <h2><i>Neiman Marcus</i>: Shoes</h2>
+                <h2><i>Neiman Marcus</i>: Watches</h2>
                 <h3>Average Price: ${avgNeiman}</h3>
                 <div>
                     <a className="button" href='/productsNeiman'>Shoes</a>

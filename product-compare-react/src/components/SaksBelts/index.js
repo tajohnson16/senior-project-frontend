@@ -49,7 +49,7 @@ class index extends Component {
     }
 
     getDataFromDb = () => {
-        fetch('http://localhost:3003/api/getData')
+        fetch('http://localhost:3002/api/getData')
             .then((data) => data.json())
             .then((res) => this.setState({ data: res.data }));
     };

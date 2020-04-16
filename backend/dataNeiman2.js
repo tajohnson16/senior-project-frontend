@@ -15,4 +15,4 @@ const DataSchema = new Schema(
 );
 
 // export the new Schema so we could modify it using Node.js
-module.exports = mongoose.model("Data", DataSchema, "SHOES-Sneakers");
+module.exports = mongoose.model("Data2", DataSchema, "ACCESSORIES-Belts");
