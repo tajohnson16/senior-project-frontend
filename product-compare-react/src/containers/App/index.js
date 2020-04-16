@@ -10,6 +10,7 @@ import NeimanBelts from '../../components/NeimanBelts'
 import NeimanWatches from '../../components/NeimanWatches'
 import SaksBelts from '../../components/SaksBelts'
 import SaksWatches from '../../components/SaksWatches'
+import Compare from '../../components/Compare'
 import '../../components/Layout/Navbar.css'
 
 
@@ -26,6 +27,7 @@ class App extends Component {
             <Route path="/neimanWatches" component={NeimanWatches}> </Route>
             <Route path="/saksBelts" component={SaksBelts}> </Route>
             <Route path="/saksWatches" component={SaksWatches}> </Route>
+            <Route path="/compare" component={Compare}> </Route>
             <Route component={NotFound} />
           </Switch>
         </div>

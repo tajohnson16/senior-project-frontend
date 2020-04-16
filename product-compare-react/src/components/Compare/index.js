@@ -1,48 +1,200 @@
-import React from 'react'
-import './styles.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Bar, Pie } from 'react-chartjs-2';
 
-const Compare = ({ products }) =>
-  <div className="row compare">
-    <div className="col-12 mt-5 text-center">
-      <table className="table">
-        <thead className="thead-default">
-          <tr>
-            <th />
-            {products.map(product =>
-              <th key={product.id}>
-                {product.name}
-              </th>
-            )}
-          </tr>
-        </thead>
-        <tbody>
-          <tr className="price">
-            <th scope="row">Price</th>
-            {products.map(product =>
-              <td key={product.id} className="text-center">{product.price}</td>
-            )}
-          </tr>
-          <tr className="colors">
-            <th scope="row">Colors</th>
-            {products.map(product =>
-              <td key={product.id}>
-                {product.colors.map((color, index) =>
-                  <span key={index} className={"bg-" + color} />
-                )}
-              </td>
-            )}
-          </tr>
-          <tr className="condition">
-            <th scope="row">Condition</th>
-            {products.map(product =>
-              <td key={product.id} className={product.condition === "Frozen" ? "bg-red" : "bg-green"}>
-                {product.condition}
-              </td>
-            )}
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>;
+const state = {
+  labels: ['Saks', 'Neiman Marcus'],
+  datasets: [
+    {
+      label: 'Price (USD)',
+      backgroundColor: ['rgba(75,192,192,1)', "#c45850"],
+      borderColor: 'rgba(0,0,0,1)',
+      borderWidth: 1,
+      data: [850.60, 870.20]
+    }
+  ]
+}
 
-export default Compare
+const state2 = {
+  labels: ['Shoes', 'Shirts', 'Pants',
+    'Under Garments', 'Accessories'],
+  datasets: [
+    {
+      label: 'Rainfall',
+      backgroundColor: [
+        '#c45850',
+        '#C9DE00',
+        '#2FDE00',
+        'rgba(75,192,192,1)',
+        '#6800B4'
+      ],
+      hoverBackgroundColor: [
+        '#501800',
+        '#4B5000',
+        '#175000',
+        '#003350',
+        '#35014F'
+      ],
+      data: [65, 59, 80, 81, 56]
+    }
+  ]
+}
+
+const divStyle = {
+  width: '500px', height: 'auto',
+  margin: 'auto',
+  'box-shadow': '0 13px 21px -5px rgba(0, 0, 0, 0.2)',
+  backgroundColor: '#fff',
+  border: '1px solid #ddd',
+  'border-radius': '5px'
+};
+
+const grids = {
+  display: 'grid',
+  grid: 'auto / auto auto'
+};
+
+export default class Compare extends React.Component {
+  render() {
+    return (
+      <div>
+        <span>
+          <h2>Comparing...</h2>
+        </span>
+        <div style={grids}>
+          <div style={divStyle}>
+            <Bar
+              data={state}
+              options={{
+                title: {
+                  display: true,
+                  text: 'Saks vs. Neiman Marcus Average Price',
+                  fontSize: 20
+                },
+                legend: {
+                  display: false,
+                  position: 'right'
+                },
+                scales: {
+                  yAxes: [{
+                    ticks: {
+                      beginAtZero: true
+                    }
+                  }],
+                  xAxes: [{
+                    barPercentage: 0.4
+                  }]
+                }
+              }}
+            />
+          </div>
+          <div style={divStyle}>
+            <Pie
+              data={state2}
+              options={{
+                title: {
+                  display: true,
+                  text: 'Total Number of Items',
+                  fontSize: 20
+                },
+                legend: {
+                  display: true,
+                  position: 'right'
+                }
+              }}
+            />
+          </div>
+        </div>
+        <br />
+        <div style={grids}>
+          <div style={divStyle}>
+            <Bar
+              data={state}
+              options={{
+                title: {
+                  display: true,
+                  text: 'Saks vs. Neiman Marcus Average Price',
+                  fontSize: 20
+                },
+                legend: {
+                  display: false,
+                  position: 'right'
+                },
+                scales: {
+                  yAxes: [{
+                    ticks: {
+                      beginAtZero: true
+                    }
+                  }],
+                  xAxes: [{
+                    barPercentage: 0.4
+                  }]
+                }
+              }}
+            />
+          </div>
+          <div style={divStyle}>
+            <Pie
+              data={state2}
+              options={{
+                title: {
+                  display: true,
+                  text: 'Total Number of Items',
+                  fontSize: 20
+                },
+                legend: {
+                  display: true,
+                  position: 'right'
+                }
+              }}
+            />
+          </div>
+        </div>
+        <br />
+        <div style={grids}>
+          <div style={divStyle}>
+            <Bar
+              data={state}
+              options={{
+                title: {
+                  display: true,
+                  text: 'Saks vs. Neiman Marcus Average Price',
+                  fontSize: 20
+                },
+                legend: {
+                  display: false,
+                  position: 'right'
+                },
+                scales: {
+                  yAxes: [{
+                    ticks: {
+                      beginAtZero: true
+                    }
+                  }],
+                  xAxes: [{
+                    barPercentage: 0.4
+                  }]
+                }
+              }}
+            />
+          </div>
+          <div style={divStyle}>
+            <Pie
+              data={state2}
+              options={{
+                title: {
+                  display: true,
+                  text: 'Total Number of Items',
+                  fontSize: 20
+                },
+                legend: {
+                  display: true,
+                  position: 'right'
+                }
+              }}
+            />
+          </div>
+        </div>
+      </div>);
+  }
+}
