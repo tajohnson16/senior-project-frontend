@@ -61,10 +61,10 @@ class index extends Component {
         lenSaks = data.length;
         avgSaks = divide(sumSaks, lenSaks).toFixed(2);
         return (
-
             <div key={data.message} className="col-md" >
                 <h2><i>Saks Fifth Avenue</i>: Shoes</h2>
                 <h3>Average Price: ${avgSaks}</h3>
+                <hr />
                 <div>
                     <a className="button" href='/products'>Shoes</a>
                     <a className="button" href='/saksBelts'>Belts</a>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { HashRouter, Router, IndexRoute } from 'react-router-dom'
-import Navbar from '../../components/Layout/Navbar'
 
 import { Home, NotFound } from '../'
 import HomePage from '../../components/HomePage'
@@ -11,7 +10,6 @@ import NeimanWatches from '../../components/NeimanWatches'
 import SaksBelts from '../../components/SaksBelts'
 import SaksWatches from '../../components/SaksWatches'
 import Compare from '../../components/Compare'
-import '../../components/Layout/Navbar.css'
 
 
 class App extends Component {

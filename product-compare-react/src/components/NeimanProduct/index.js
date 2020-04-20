@@ -64,6 +64,7 @@ class index extends Component {
             <div key={data.message} className="col-md" >
                 <h2><i>Neiman Marcus</i>: Shoes</h2>
                 <h3>Average Price: ${avgNeiman}</h3>
+                <hr />
                 <div>
                     <a className="button" href='/productsNeiman'>Shoes</a>
                     <a className="button" href='/neimanBelts'>Belts</a>

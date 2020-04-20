@@ -10,32 +10,33 @@ const state = {
       backgroundColor: ['rgba(75,192,192,1)', "#c45850"],
       borderColor: 'rgba(0,0,0,1)',
       borderWidth: 1,
-      data: [850.60, 870.20]
+      data: [562.78, 499.33]
     }
   ]
 }
 
 const state2 = {
-  labels: ['Shoes', 'Shirts', 'Pants',
-    'Under Garments', 'Accessories'],
+  labels: ['Saks', 'Neiman Marcus'],
   datasets: [
     {
-      label: 'Rainfall',
-      backgroundColor: [
-        '#c45850',
-        '#C9DE00',
-        '#2FDE00',
-        'rgba(75,192,192,1)',
-        '#6800B4'
-      ],
-      hoverBackgroundColor: [
-        '#501800',
-        '#4B5000',
-        '#175000',
-        '#003350',
-        '#35014F'
-      ],
-      data: [65, 59, 80, 81, 56]
+      label: 'Price (USD)',
+      backgroundColor: ['rgba(75,192,192,1)', "#c45850"],
+      borderColor: 'rgba(0,0,0,1)',
+      borderWidth: 1,
+      data: [407.05, 326.88]
+    }
+  ]
+}
+
+const state3 = {
+  labels: ['Saks', 'Neiman Marcus'],
+  datasets: [
+    {
+      label: 'Price (USD)',
+      backgroundColor: ['rgba(75,192,192,1)', "#c45850"],
+      borderColor: 'rgba(0,0,0,1)',
+      borderWidth: 1,
+      data: [1365.71, 1375.00]
     }
   ]
 }
@@ -49,10 +50,25 @@ const divStyle = {
   'border-radius': '5px'
 };
 
-const grids = {
-  display: 'grid',
-  grid: 'auto / auto auto'
-};
+const align = {
+  width: '100px',
+  'text-align': 'center',
+  margin: 'auto',
+  'box-shadow': '0 13px 21px -5px rgba(0, 0, 0, 0.2)',
+  backgroundColor: '#fff',
+  border: '1px solid #ddd',
+  'border-radius': '5px'
+}
+
+const align2 = {
+  width: '130px',
+  'text-align': 'center',
+  margin: 'auto',
+  'box-shadow': '0 13px 21px -5px rgba(0, 0, 0, 0.2)',
+  backgroundColor: '#fff',
+  border: '1px solid #ddd',
+  'border-radius': '5px'
+}
 
 export default class Compare extends React.Component {
   render() {
@@ -61,14 +77,17 @@ export default class Compare extends React.Component {
         <span>
           <h2>Comparing...</h2>
         </span>
-        <div style={grids}>
+        <hr />
+        <h3 style={align}>Shoes</h3>
+        <br />
+        <div>
           <div style={divStyle}>
             <Bar
               data={state}
               options={{
                 title: {
                   display: true,
-                  text: 'Saks vs. Neiman Marcus Average Price',
+                  text: 'Average Shoe Price',
                   fontSize: 20
                 },
                 legend: {
@@ -84,36 +103,23 @@ export default class Compare extends React.Component {
                   xAxes: [{
                     barPercentage: 0.4
                   }]
-                }
-              }}
-            />
-          </div>
-          <div style={divStyle}>
-            <Pie
-              data={state2}
-              options={{
-                title: {
-                  display: true,
-                  text: 'Total Number of Items',
-                  fontSize: 20
-                },
-                legend: {
-                  display: true,
-                  position: 'right'
                 }
               }}
             />
           </div>
         </div>
         <br />
-        <div style={grids}>
+        <hr />
+        <h3 style={align}>Belts</h3>
+        <br />
+        <div>
           <div style={divStyle}>
             <Bar
-              data={state}
+              data={state2}
               options={{
                 title: {
                   display: true,
-                  text: 'Saks vs. Neiman Marcus Average Price',
+                  text: 'Average Belt Price',
                   fontSize: 20
                 },
                 legend: {
@@ -129,36 +135,23 @@ export default class Compare extends React.Component {
                   xAxes: [{
                     barPercentage: 0.4
                   }]
-                }
-              }}
-            />
-          </div>
-          <div style={divStyle}>
-            <Pie
-              data={state2}
-              options={{
-                title: {
-                  display: true,
-                  text: 'Total Number of Items',
-                  fontSize: 20
-                },
-                legend: {
-                  display: true,
-                  position: 'right'
                 }
               }}
             />
           </div>
         </div>
         <br />
-        <div style={grids}>
+        <hr />
+        <h3 style={align2}>Watches</h3>
+        <br />
+        <div >
           <div style={divStyle}>
             <Bar
-              data={state}
+              data={state3}
               options={{
                 title: {
                   display: true,
-                  text: 'Saks vs. Neiman Marcus Average Price',
+                  text: 'Average Watch Price',
                   fontSize: 20
                 },
                 legend: {
@@ -178,23 +171,10 @@ export default class Compare extends React.Component {
               }}
             />
           </div>
-          <div style={divStyle}>
-            <Pie
-              data={state2}
-              options={{
-                title: {
-                  display: true,
-                  text: 'Total Number of Items',
-                  fontSize: 20
-                },
-                legend: {
-                  display: true,
-                  position: 'right'
-                }
-              }}
-            />
-          </div>
         </div>
+        <br />
+        <hr />
+        <br />
       </div>);
   }
 }
