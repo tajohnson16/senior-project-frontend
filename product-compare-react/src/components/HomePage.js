@@ -1,7 +1,16 @@
+/**
+ * Home page displaying two analytical charts
+ * 
+ * @author Tim Johnson
+ * Senior Project
+ */
+
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Bar, Pie } from 'react-chartjs-2';
 
+/**
+ * Bar graph state for average prices of all products
+ */
 const state = {
     labels: ['Saks', 'Neiman Marcus'],
     datasets: [
@@ -15,6 +24,9 @@ const state = {
     ]
 }
 
+/**
+ * Pie graph state for total number of shoes, belts, and watches
+ */
 const state2 = {
     labels: ['Shoes', 'Belts', 'Watches'],
     datasets: [
@@ -35,6 +47,9 @@ const state2 = {
     ]
 }
 
+/**
+ * Methods for HTML/CSS graph styling
+ */
 const divStyle = {
     width: '500px', height: 'auto',
     margin: 'auto',
@@ -49,6 +64,9 @@ const grids = {
     grid: 'auto / auto auto'
 };
 
+/**
+ * HTML rendering of home page
+ */
 export default class HomePage extends React.Component {
     render() {
         return (

@@ -1,3 +1,10 @@
+/**
+ * Component to map each individual product for Neiman Marcus
+ * 
+ * @author Tim Johnson
+ * Senior Project
+ */
+
 import React from 'react'
 import NeimanProduct from '../NeimanProduct'
 

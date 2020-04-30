@@ -1,3 +1,10 @@
+/**
+ * Component to map each individual product for Saks Fifth Avenue
+ * 
+ * @author Tim Johnson
+ * Senior Project
+ */
+
 import React from 'react'
 import SaksProduct from '../SaksProduct'
 

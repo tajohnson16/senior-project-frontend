@@ -1,7 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Bar, Pie } from 'react-chartjs-2';
+/**
+ * Page to compare the average prices of products
+ * 
+ * @author Tim Johnson
+ * Senior Project
+ */
 
+import React from 'react';
+import { Bar } from 'react-chartjs-2';
+
+/**
+ * Bar graph state for average shoe prices
+ */
 const state = {
   labels: ['Saks', 'Neiman Marcus'],
   datasets: [
@@ -15,6 +24,9 @@ const state = {
   ]
 }
 
+/**
+ * Bar graph state for average belt prices
+ */
 const state2 = {
   labels: ['Saks', 'Neiman Marcus'],
   datasets: [
@@ -28,6 +40,9 @@ const state2 = {
   ]
 }
 
+/**
+ * Bar graph state for average watch prices
+ */
 const state3 = {
   labels: ['Saks', 'Neiman Marcus'],
   datasets: [
@@ -41,6 +56,9 @@ const state3 = {
   ]
 }
 
+/**
+ * Methods for HTML/CSS graph styling
+ */
 const divStyle = {
   width: '500px', height: 'auto',
   margin: 'auto',
@@ -71,6 +89,9 @@ const align2 = {
 }
 
 export default class Compare extends React.Component {
+  /**
+   * HTML rendering of graphs on page
+   */
   render() {
     return (
       <div>

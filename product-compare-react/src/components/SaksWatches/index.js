@@ -1,7 +1,16 @@
+/**
+ * Page to display Saks watches
+ * 
+ * @author Tim Johnson
+ * Senior Project
+ */
+
 import React, { Component } from 'react';
 import './styles.css';
-import axios from 'axios';
 
+/**
+ * HTML/CSS styling of products on page
+ */
 const grids = {
     display: 'grid',
     grid: 'auto / auto auto auto',
@@ -13,10 +22,27 @@ const grids2 = {
     grid: 'auto / auto auto',
 };
 
+/**
+ * Sum of product prices in collection
+ */
 var sumSaks = 0;
+
+/**
+ * Number of products in collection
+ */
 var lenSaks = 0;
+
+/**
+ * Average product price in collection
+ */
 var avgSaks = 0;
 
+/**
+ * Dividing two numbers
+ * 
+ * @param {number} $a - Dividend
+ * @param {number} $b - Divisor
+ */
 function divide($a, $b) {
     return ($a / $b);
 }
@@ -54,6 +80,9 @@ class index extends Component {
             .then((res) => this.setState({ data: res.data }));
     };
 
+    /**
+    * HTML rendering of products on page
+    */
     render() {
         const { data } = this.state;
         data.map((dat) => sumSaks += dat.price)
@@ -102,11 +131,4 @@ class index extends Component {
     }
 }
 
-
-
-
-
-/* const Product = ({ product, compare }) =>
-    ;
- */
 export default index;
