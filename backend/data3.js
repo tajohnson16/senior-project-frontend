@@ -1,8 +1,16 @@
-// /backend/data.js
+/**
+ * Schema for retreived data in API
+ * 
+ * @author Tim Johnson
+ * Senior Project
+ */
+
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-// this will be our data base's data structure 
+/**
+ * Schema to map data from API to a type
+ */
 const DataSchema = new Schema(
     {
         prodURL: String,
@@ -14,5 +22,8 @@ const DataSchema = new Schema(
     { timestamps: true }
 );
 
-// export the new Schema so we could modify it using Node.js
+/**
+ * Exports schema to modify using Node.js.
+ * Connected to 'ACCESSORIES-Watches' collection in Saks Database.
+ */
 module.exports = mongoose.model("Data3", DataSchema, "ACCESSORIES-Watches");
